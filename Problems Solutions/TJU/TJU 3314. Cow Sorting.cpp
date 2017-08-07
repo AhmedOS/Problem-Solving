@@ -61,7 +61,7 @@ int main() {
 		sum[i] += sum[i - 1];
 	long long ans = 0;
 	for (int i = 0; i < n; i++) {
-		//ans += all_numbers_bigger_than_arr[i].second - (all_numbers_comes_after_i - all_numbers_comes_after_i_and_smaller) * arr[i].first.first
+		//ans += (all_numbers_bigger_than_arr[i].second - (all_numbers_comes_after_i - all_numbers_comes_after_i_and_smaller)) * arr[i].first.first
 		ans += (sum[100000] - sum[arr[i].second] - (n - 1 - arr[i].first.second - range_query(bit2, arr[i].first.second + 2, n))) * arr[i].first.first;
 		ans += getsum(bit, arr[i].first.second);
 		update(bit, arr[i].first.second + 1, -arr[i].first.first);
