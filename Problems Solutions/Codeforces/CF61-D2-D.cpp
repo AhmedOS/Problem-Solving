@@ -20,7 +20,7 @@ using namespace std;
 
 int n;
 vector<pair<int, int>> vec[100000];
-vector<pair<int, long long>> leaf;
+vector<long long> leaf;
 
 void solve(int nxt, int par, long long cost) {
 	bool f = 0;
@@ -30,7 +30,7 @@ void solve(int nxt, int par, long long cost) {
 			solve(vec[nxt][i].first, nxt, cost + vec[nxt][i].second);
 		}
 	if (!f)
-		leaf.push_back({ nxt, cost });
+		leaf.push_back(cost);
 }
 
 int main() {
@@ -49,7 +49,7 @@ int main() {
 	solve(0, -1, 0);
 	long long mx = 0;
 	for (int i = 0; i < leaf.size(); i++)
-		mx = max(mx, leaf[i].second);
+		mx = max(mx, leaf[i]);
 	cout << ans - mx << '\n';
 	return 0;
 }
