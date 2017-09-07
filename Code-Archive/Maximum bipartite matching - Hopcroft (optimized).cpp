@@ -21,8 +21,8 @@ bool dfs(int nxt){
     return ret;
 }
 void hopcroft(){
-    bool ag = 1;
-    while(ag){
+    bool again = 1;
+    while(again){
         it++;
         for(int i = 1; i <= n; i++)
             if(!mnode[i])
@@ -55,7 +55,7 @@ void hopcroft(){
         }
         for(int i = 0; i < dfsv.size(); i++)
             dfs(dfsv[i]);
-        ag = dfsv.size() > 0;
+        again = dfsv.size() > 0;
     }
 }
 int main(){
