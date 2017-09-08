@@ -1,4 +1,4 @@
-//http://www.spoj.com/problems/GSS6
+//http://www.spoj.com/problems/GSS6 
 #pragma warning (disable : 4996 4018)
 
 //#include <thread>
