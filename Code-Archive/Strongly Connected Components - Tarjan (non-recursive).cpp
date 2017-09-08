@@ -1,3 +1,8 @@
+/*
+A modified version of this implementation:
+https://github.com/mostafa-saad/ArabicCompetitiveProgramming/blob/master/09%20Graph_Theory/Algorithms_Graph_Theory_14_Strongly_Connected_Components_2.cpp
+*/
+
 vector<int> dn, lowLink, comp;
 vector<bool> inStk;
 stack<int> stk;
