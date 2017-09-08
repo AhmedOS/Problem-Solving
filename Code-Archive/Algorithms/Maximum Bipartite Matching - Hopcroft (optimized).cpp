@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, m, p; // 1-indexed, n 1st set nodes 1->n, m 2nd set nodes n+1->n+m, p edges
+int n, m, p; // 1-indexed, n 1st set of nodes 1->n, m 2nd set of nodes n+1->n+m, p edges
 const int mxv = 100001; // maximum number of nodes at all
 vector<int> vec[mxv];
 int mnode[mxv], vis[mxv], qvis[mxv], prv[mxv], it; // mnode->matched node, zero if not matched
