@@ -1,7 +1,11 @@
 /*
 The main idea is to create a complete graph so we get number of cycles that is less than or equal the required number,
-now we have (#nodes COMBINATION 3) cycles, if number of cycles still less than the required number, we add a node and connect it to 2 or more nodes that are part of the complete graph. now number of cycles is increased by (#connected_to_nodes COMBINATION 2).
-Example: if it is required to have 39 cycles, then we create a complete graph with 7 nodes to get a total of 35 cycles, then add a new node and connect it to 3 nodes of the complete graph so we get a total of 38 cycles, and finally we add another node and connect it to 2 nodes so we get the required number of cycles with 9 nodes.
+now we have (#nodes COMBINATION 3) cycles, if number of cycles still less than the required number,
+we add a node and connect it to 2 or more nodes that are part of the complete graph.
+now number of cycles is increased by (#connected_to_nodes COMBINATION 2).
+Example: if it is required to have 39 cycles, then we create a complete graph with 7 nodes to get a total of 35 cycles,
+then add a new node and connect it to 3 nodes of the complete graph so we get a total of 38 cycles,
+and finally we add another node and connect it to 2 nodes so we get the required number of cycles with 9 nodes.
 as illustrated in the image: https://i.imgur.com/SkyMajI.png
 */
 #pragma warning (disable : 4996 4018)
