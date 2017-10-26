@@ -27,7 +27,7 @@ void update(long long fen[], int idx, long long val) {
 }
 long long query(long long fen[], int idx) {
 	long long ret = 0;
-	for (int i = idx; i; i -= (i & -i))
+	for (int i = idx; i; i -= (i & -i)) //remove first one bit
 		ret += fen[i];
 	return ret;
 }
@@ -57,10 +57,9 @@ int main() {
 			update_range(bit, nm + 1, n, 1);
 		}
 	}
-	vector<int> cr;
+	int c = 0;
 	for (int i = 1; i <= n; i++)
-		if (m && query(bit, i) == m)
-			cr.push_back(i);
+		c += (m && query(bit, i) == m);
 	for (int i = 0; i < n; i++) {
 		if (!m) {
 			cout << "Lie\n";
@@ -68,9 +67,9 @@ int main() {
 		}
 		long long ret = query(bit, vec[i].first);
 		if (vec[i].second) {
-			if (ret == m && cr.size() == 1)
+			if (ret == m && c == 1)
 				cout << "Lie\n";
-			else if (ret == m && cr.size() != 1)
+			else if (ret == m && c != 1)
 				cout << "Not defined\n";
 			else
 				cout << "Truth\n";
@@ -79,7 +78,7 @@ int main() {
 			if (ret != m)
 				cout << "Lie\n";
 			else
-				cout << (cr.size() == 1 ? "Truth" : "Not defined") << '\n';
+				cout << (c == 1 ? "Truth" : "Not defined") << '\n';
 		}
 	}
 	return 0;
